@@ -18,6 +18,11 @@ CLASSPATH=${CLASSPATH}:`cat mdep.classpath`
 export CLASSPATH
 echo -n "$CLASSPATH" | perl -072 -l012 -pe1
 
+java -ea \
+    -Dorg.eclipse.jetty.util.log.class=com.acme.log.StdErrLog \
+    -Dcom.acme.labs.Application.LEVEL=DEBUG \
+    org.eclipse.jetty.start.Main
+
 java -ea org.eclipse.jetty.start.Main
 
 echo "all done"
