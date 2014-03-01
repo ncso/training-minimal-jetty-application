@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_0.dtd">
+<Configure id="Application" class="com.acme.labs.Application">
+  <Get class="java.lang.System" name="out">
+    <Call name="println">
+      <Arg>configuring <Ref refid="Application"/>, count = <Property name="count" default="3"/></Arg>
+    </Call>
+  </Get>
+  <Set name="foo">
+    value
+  </Set>
+  <Set name="count" type="int">
+    <Property name="count" default="3"/>
+  </Set>
+</Configure>
